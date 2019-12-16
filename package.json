@@ -1,16 +1,16 @@
 {
-	"name": "varname-changer",
-	"displayName": "Varname Changer",
+	"name": "property-name-changer",
+	"displayName": "PropertyNameChanger",
 	"description": "Change your property name easily!",
-	"version": "0.3.17",
+	"version": "1.0.1",
 	"publisher": "urnotzane",
 	"icon": "images/icon.png",
 	"license": "MIT",
 	"scripts": {
 		"vscode:prepublish": "webpack --mode production",
-    "webpack": "webpack --mode development",
-    "webpack-dev": "webpack --mode development",
-    "test-compile": "tsc -p ./",
+		"webpack": "webpack --mode development",
+		"webpack-dev": "webpack --mode development",
+		"test-compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"test": "node ./out/test/runTest.js"
 	},
@@ -23,68 +23,68 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:varnameChanger.toBottomLine",
-		"onCommand:varnameChanger.toHump",
-		"onCommand:varnameChanger.jsonToBottomLine",
-		"onCommand:varnameChanger.jsonToHump",
-		"onCommand:varnameChanger.deleteQuote"
+		"onCommand:propertyNameChanger.toBottomLine",
+		"onCommand:propertyNameChanger.toHump",
+		"onCommand:propertyNameChanger.jsonToBottomLine",
+		"onCommand:propertyNameChanger.jsonToHump",
+		"onCommand:propertyNameChanger.deleteQuote"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "varnameChanger.toHump",
+				"command": "propertyNameChanger.toHump",
 				"title": "底杠转驼峰",
-				"category": "varnameChanger.toHump"
+				"category": "propertyNameChanger.toHump"
 			},
 			{
-				"command": "varnameChanger.toBottomLine",
+				"command": "propertyNameChanger.toBottomLine",
 				"title": "驼峰转底杠",
-				"category": "varnameChanger.toBottomLine"
+				"category": "propertyNameChanger.toBottomLine"
 			},
 			{
-				"command": "varnameChanger.jsonToHump",
+				"command": "propertyNameChanger.jsonToHump",
 				"title": "JSON底杠转驼峰",
-				"category": "varnameChanger.jsonToHump"
+				"category": "propertyNameChanger.jsonToHump"
 			},
 			{
-				"command": "varnameChanger.jsonToBottomLine",
+				"command": "propertyNameChanger.jsonToBottomLine",
 				"title": "JSON驼峰转底杠",
-				"category": "varnameChanger.jsonToBottomLine"
+				"category": "propertyNameChanger.jsonToBottomLine"
 			},
 			{
-				"command": "varnameChanger.deleteQuote",
+				"command": "propertyNameChanger.deleteQuote",
 				"title": "删除引号",
-				"category": "varnameChanger.deleteQuote"
+				"category": "propertyNameChanger.deleteQuote"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "varnameChanger.toHump",
+				"command": "propertyNameChanger.toHump",
 				"key": "ctrl+shift+1",
 				"mac": "ctrl+shift+1",
 				"when": "editorTextFocus"
 			},
 			{
-				"command": "varnameChanger.toBottomLine",
+				"command": "propertyNameChanger.toBottomLine",
 				"key": "ctrl+shift+2",
 				"mac": "ctrl+shift+2",
 				"when": "editorTextFocus"
 			},
 			{
-				"command": "varnameChanger.jsonToHump",
+				"command": "propertyNameChanger.jsonToHump",
 				"key": "ctrl+shift+3",
 				"mac": "ctrl+shift+3",
 				"when": "editorTextFocus"
 			},
 			{
-				"command": "varnameChanger.jsonToBottomLine",
+				"command": "propertyNameChanger.jsonToBottomLine",
 				"key": "ctrl+shift+4",
 				"mac": "ctrl+shift+4",
 				"when": "editorTextFocus"
 			},
 			{
-				"command": "varnameChanger.deleteQuote",
+				"command": "propertyNameChanger.deleteQuote",
 				"key": "ctrl+shift+'",
 				"mac": "ctrl+shift+'",
 				"when": "editorTextFocus"
@@ -93,23 +93,23 @@
 		"menus": {
 			"editor/context": [
 				{
-					"command": "varnameChanger.toHump",
+					"command": "propertyNameChanger.toHump",
 					"group": "5_cutcopypaste@1"
 				},
 				{
-					"command": "varnameChanger.toBottomLine",
+					"command": "propertyNameChanger.toBottomLine",
 					"group": "5_cutcopypaste@1"
 				},
 				{
-					"command": "varnameChanger.jsonToHump",
+					"command": "propertyNameChanger.jsonToHump",
 					"group": "5_cutcopypaste@1"
 				},
 				{
-					"command": "varnameChanger.jsonToBottomLine",
+					"command": "propertyNameChanger.jsonToBottomLine",
 					"group": "5_cutcopypaste@1"
 				},
 				{
-					"command": "varnameChanger.deleteQuote",
+					"command": "propertyNameChanger.deleteQuote",
 					"group": "5_cutcopypaste@2"
 				}
 			]
@@ -142,11 +142,11 @@
 		"yo": "^3.1.1"
 	},
 	"bugs": {
-		"url": "https://github.com/urnotzane/varname-changer-vscode/issues"
+		"url": "https://github.com/urnotzane/property-name-changer/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/urnotzane/varname-changer-vscode.git"
+		"url": "https://github.com/urnotzane/property-name-changer.git"
 	},
-	"homepage": "https://github.com/urnotzane/varname-changer-vscode/blob/master/README.md"
+	"homepage": "https://github.com/urnotzane/property-name-changer/blob/master/README.md"
 }

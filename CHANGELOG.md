@@ -1,6 +1,6 @@
 # Change Log
 
-All notable changes to the "varname-changer" extension will be documented in this file.
+All notable changes to the "property-name-changer" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
@@ -11,6 +11,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - `Removed` for now removed features.
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities.
+## [1.0.0] - 2019-12-16
+### Added
+- 添加JSON转义。
+- 使用webpack打包。
+### Fixed
+- 用webpack打包来修复node_modules不能用的问题。
 
 ## [0.3.1] - 2019-12-13
 ### Fixed
@@ -44,4 +50,4 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - You can change hump string to bottom line.
 - You can delete quotation mark quickly in your text.
 - All the above functions,support `cmd/ctrl+shift+P` command line and keybindings!
-- If you want to know more info,please read [README.md](https://github.com/urnotzane/varname-changer-vscode/blob/master/README.md).
+- If you want to know more info,please read [README.md](https://github.com/urnotzane/property-name-changer/blob/master/README.md).

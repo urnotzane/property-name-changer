@@ -16,7 +16,13 @@ const config = {
   },
   devtool: 'source-map',
   externals: {
-    vscode: 'commonjs vscode'
+    vscode: 'commonjs vscode',
+    lodash: {
+      commonjs: 'lodash',
+      commonjs2: 'lodash',
+      amd: 'lodash',
+      root: '_'
+    },
   },
   resolve: {
     extensions: ['.ts', '.js']
@@ -33,6 +39,6 @@ const config = {
         ]
       }
     ]
-  }
+  },
 };
 module.exports = config;

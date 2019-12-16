@@ -6,7 +6,7 @@ import { jsonToBottomLine, jsonToHump } from './lib/prettier';
 
 function replaceFactory(handler:Function, name:string) {
 	// 注册编辑器事件
-	return vscode.commands.registerTextEditorCommand(`varnameChanger.${name}`, (textEditor, edit) => {
+	return vscode.commands.registerTextEditorCommand(`propertyNameChanger.${name}`, (textEditor, edit) => {
 		const getText = textEditor.document.getText;
 		// 选中的内容Range数组
 		const selectRange = textEditor.selections;
@@ -23,7 +23,7 @@ function replaceFactory(handler:Function, name:string) {
 	});
 }
 export function activate(context:vscode.ExtensionContext) {
-	logInfo(`varnameChanger is now active!`);
+	logInfo(`propertyNameChanger is now active!`);
 
 	context.subscriptions.push(replaceFactory(toBottomLine, 'toBottomLine'));
 	context.subscriptions.push(replaceFactory(toHump, 'toHump'));

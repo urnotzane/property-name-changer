@@ -13,7 +13,7 @@ export function jsonToHump(text:string) : string {
       return '';
     }
     if (!isJson(text)) {
-      message.warn('非JSON格式的内容转化可能有误！')
+      message.error('非JSON格式的内容转化可能有误！');
       return text;
     }
     const obj = fieldReplacer(JSON.parse(text), toHump);
@@ -35,7 +35,7 @@ export function jsonToBottomLine(text:string) : string {
       return '';
     }
     if (!isJson(text)) {
-      message.warn('非JSON格式的内容转化可能有误！')
+      message.error('非JSON格式的内容转化可能有误！');
       return text;
     }
     const obj = fieldReplacer(JSON.parse(text), toBottomLine);
