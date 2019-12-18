@@ -35,13 +35,13 @@
 	"contributes": {
 		"commands": [
       {
-				"command": "propertyNameChanger.toSelector",
+				"command": "jsonToType.toSelector",
 				"title": "selected json → selector function"
 			},
 			{
-				"command": "propertyNameChanger.toType",
+				"command": "jsonToType.toType",
 				"title": "selected json → TypeScript Interface",
-				"category": "propertyNameChanger.toType"
+				"category": "jsonToType.toType"
       },
 			{
 				"command": "propertyNameChanger.toHump",
@@ -71,13 +71,13 @@
 		],
 		"keybindings": [
       {
-				"command": "propertyNameChanger.toSelector",
-				"key": "ctrl+shift+s",
-				"mac": "ctrl+shift+s",
+				"command": "jsonToType.toSelector",
+				"key": "ctrl+shift+`",
+				"mac": "ctrl+shift+`",
 				"when": "editorTextFocus"
 			},
 			{
-				"command": "propertyNameChanger.toType",
+				"command": "jsonToType.toType",
 				"key": "ctrl+shift+i",
 				"mac": "ctrl+shift+i",
 				"when": "editorTextFocus"
@@ -116,11 +116,11 @@
 		"menus": {
 			"editor/context": [
         {
-					"command": "propertyNameChanger.toType",
+					"command": "jsonToType.toType",
 					"group": "5_cutcopypaste@1"
 				},
 				{
-					"command": "propertyNameChanger.toSelector",
+					"command": "jsonToType.toSelector",
 					"group": "5_cutcopypaste@1"
         },
 				{

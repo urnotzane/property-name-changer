@@ -23,8 +23,7 @@
 		"Other"
 	],
 	"activationEvents": [
-    "onCommand:propertyNameChanger.toSelector",
-    "onCommand:propertyNameChanger.toType",
+    
 		"onCommand:propertyNameChanger.toBottomLine",
 		"onCommand:propertyNameChanger.toHump",
 		"onCommand:propertyNameChanger.jsonToBottomLine",
@@ -34,15 +33,6 @@
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
-      {
-				"command": "propertyNameChanger.toSelector",
-				"title": "selected json → selector function"
-			},
-			{
-				"command": "propertyNameChanger.toType",
-				"title": "selected json → TypeScript Interface",
-				"category": "propertyNameChanger.toType"
-      },
 			{
 				"command": "propertyNameChanger.toHump",
 				"title": "底杠转驼峰",
@@ -70,18 +60,6 @@
 			}
 		],
 		"keybindings": [
-      {
-				"command": "propertyNameChanger.toSelector",
-				"key": "ctrl+shift+s",
-				"mac": "ctrl+shift+s",
-				"when": "editorTextFocus"
-			},
-			{
-				"command": "propertyNameChanger.toType",
-				"key": "ctrl+shift+i",
-				"mac": "ctrl+shift+i",
-				"when": "editorTextFocus"
-      },
 			{
 				"command": "propertyNameChanger.toHump",
 				"key": "ctrl+shift+1",
@@ -115,14 +93,6 @@
 		],
 		"menus": {
 			"editor/context": [
-        {
-					"command": "propertyNameChanger.toType",
-					"group": "5_cutcopypaste@1"
-				},
-				{
-					"command": "propertyNameChanger.toSelector",
-					"group": "5_cutcopypaste@1"
-        },
 				{
 					"command": "propertyNameChanger.toHump",
 					"group": "5_cutcopypaste@1"

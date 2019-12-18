@@ -32,8 +32,8 @@ export function activate(context:vscode.ExtensionContext) {
 	context.subscriptions.push(replaceFactory(jsonToBottomLine, 'jsonToBottomLine'));
 	context.subscriptions.push(replaceFactory(jsonToHump, 'jsonToHump'));
   context.subscriptions.push(replaceFactory(deleteQuote, 'deleteQuote'));
-  context.subscriptions.push(replaceFactory(GenPrettierSelector, 'toSelector'));
-  context.subscriptions.push(replaceFactory(toInterface, 'toType'));
+  context.subscriptions.push(replaceFactory(GenPrettierSelector, 'jsonToType.toSelector'));
+  context.subscriptions.push(replaceFactory(toInterface, 'jsonToType.toType'));
 }
 
 // this method is called when your extension is deactivated

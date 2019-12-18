@@ -116,3 +116,16 @@ export function isJson(str:string) : boolean {
   return false;
 }
 
+/**
+ * 
+ * @param value:string 
+ * @description 对象转为格式化后的字符串
+ */
+export function objectToFormatString(value:string) : string {
+  const text = prettier.format(value, {
+    // parser: "json5",
+    bracketSpacing: true,
+    trailingComma: "all",
+  });
+  return text.replace(/\"/g,'');
+}

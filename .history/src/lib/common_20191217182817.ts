@@ -107,7 +107,7 @@ export function isJson(str:string) : boolean {
       if (typeof obj === 'object') {
         return true;
       }
-      return false;
+      return false
     } catch (error) {
       logError(error);
       return false;
@@ -115,4 +115,3 @@ export function isJson(str:string) : boolean {
   }
   return false;
 }
-

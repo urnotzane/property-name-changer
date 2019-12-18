@@ -65,7 +65,7 @@ function objectToFormatString(obj:CommonObject) : string {
  * @param value:string 
  * @description 对象转为格式化后的字符串
  */
-export function selectorToFormatString(value:string) : string {
+export function objectToFormatString(value:string) : string {
   const text = prettier.format(value, {
     // parser: "json5",
     bracketSpacing: true,

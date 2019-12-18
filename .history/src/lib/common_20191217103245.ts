@@ -82,7 +82,7 @@ export function fieldReplacer(data:CommonObject|CommonObject[], handler:Function
       result[newKey] = value;
     }
   }
-  return result;
+  return result
 }
 /**
  * 
@@ -107,7 +107,7 @@ export function isJson(str:string) : boolean {
       if (typeof obj === 'object') {
         return true;
       }
-      return false;
+      return false
     } catch (error) {
       logError(error);
       return false;
@@ -115,4 +115,3 @@ export function isJson(str:string) : boolean {
   }
   return false;
 }
-

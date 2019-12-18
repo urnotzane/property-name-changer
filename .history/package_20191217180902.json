@@ -72,8 +72,8 @@
 		"keybindings": [
       {
 				"command": "propertyNameChanger.toSelector",
-				"key": "ctrl+shift+s",
-				"mac": "ctrl+shift+s",
+				"key": "ctrl+shift+`",
+				"mac": "ctrl+shift+`",
 				"when": "editorTextFocus"
 			},
 			{
