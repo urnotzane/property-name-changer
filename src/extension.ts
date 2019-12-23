@@ -5,8 +5,9 @@ import { toHump, logWarn, logInfo, deleteQuote, toBottomLine } from './lib/commo
 import { jsonToBottomLine, jsonToHump } from './lib/prettier';
 import { toInterface } from './lib/transform';
 import { GenPrettierSelector } from './lib/prettier-selector';
+import { keyType } from './type';
 
-function replaceFactory(handler:Function, name:string) {
+function replaceFactory(handler:Function, name:string, extra?:any) {
 	// 注册编辑器事件
 	return vscode.commands.registerTextEditorCommand(`propertyNameChanger.${name}`, (textEditor, edit) => {
 		const getText = textEditor.document.getText;
@@ -17,7 +18,7 @@ function replaceFactory(handler:Function, name:string) {
 			const text = getText(range);
 			if (text) {
 				const location = new vscode.Range(start, end);
-				edit.replace(location, handler(text));
+				edit.replace(location, handler(text, extra));
 			} else {
 				logWarn('未选中任何文字！');
 			}
@@ -34,6 +35,7 @@ export function activate(context:vscode.ExtensionContext) {
   context.subscriptions.push(replaceFactory(deleteQuote, 'deleteQuote'));
   context.subscriptions.push(replaceFactory(GenPrettierSelector, 'toSelector'));
   context.subscriptions.push(replaceFactory(toInterface, 'toType'));
+  context.subscriptions.push(replaceFactory(toInterface, 'toHumpType', keyType.toHump));
 }
 
 // this method is called when your extension is deactivated

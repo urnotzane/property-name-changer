@@ -1,11 +1,14 @@
 
 import * as vscode from 'vscode';
 import * as _ from 'lodash';
-import { CommonObject } from '../type';
+import { CommonObject, keyType } from '../type';
+import { toHump } from './common';
 
 let interfaceNames = ['YourInterfaceName'];
-let extra_interface = '';
-export function toInterface (variable: string) {
+let extraInterface = '';
+let transType = 'toLine';
+export function toInterface (variable:string, type:keyType = keyType.toLine) {
+  transType = type;
   try {
     const data = JSON.parse(variable);
     let result;
@@ -14,7 +17,10 @@ export function toInterface (variable: string) {
     } else {
       result = generateInterface('YourInterfaceName', data, '');
     }
-    return (result + '\n/* 自动生成的 Interface */\n' + extra_interface).trim();
+    const res = (result + '\n/* 自动生成的 Interface */\n' + extraInterface).trim();
+    interfaceNames = ['YourInterfaceName'];
+    extraInterface = '';
+    return res;
   } catch (error) {
     vscode.window.showErrorMessage('json 解析错误！');
   }
@@ -33,27 +39,27 @@ function getVariableType (variable:{[props:string]:any}, name:string):string {
   }
   
   const type = typeof variable;
+  if (variable.constructor.name === 'Array') {
+    // const tpl = [];
+    // variable.map((item, index) => {
+    //   const arrType = getVariableType(item, name);
+    //   tpl.push(arrType);
+    // })
+    // const isNotSame = tpl.find(item => item !== tpl[0]);
+    // if (isNotSame) {
+    //   return tpl;
+    // }
+    return getVariableType(variable[0], name) + '[]';
+  }
   if (type === 'object') {
     if (!variable) {
       return 'void /* 未知类型 */';
     }
     
-    // if (name.slice(-2) == 'es') {
-    //   name = name.slice(0, -2);
-    // } else if (name.slice(-1) == 's') {
-    //   name = name.slice(0, -1);
-    // }
-    if (variable.constructor.name === 'Array') {
-      // const tpl = [];
-      // variable.map((item, index) => {
-      //   const arrType = getVariableType(item, name);
-      //   tpl.push(arrType);
-      // })
-      // const isNotSame = tpl.find(item => item !== tpl[0]);
-      // if (isNotSame) {
-      //   return tpl;
-      // }
-      return getVariableType(variable[0], name) + '[]';
+    if (name.slice(-2) === 'es') {
+      name = name.slice(0, -2);
+    } else if (name.slice(-1) === 's') {
+      name = name.slice(0, -1);
     }
 
     if (name) {
@@ -61,7 +67,7 @@ function getVariableType (variable:{[props:string]:any}, name:string):string {
     } else {
       name = 'Unknown';
     }
-    let ifName = 'I' + '_' + name;
+    let ifName = 'I' + name;
 
     if (interfaceNames.indexOf(ifName) !== -1) {
       let i = 1;
@@ -73,7 +79,7 @@ function getVariableType (variable:{[props:string]:any}, name:string):string {
     }
     interfaceNames.push(ifName);
     const extra = generateInterface(ifName, variable, '');
-    extra_interface = extra + extra_interface;
+    extraInterface = extra + extraInterface;
     return ifName;
   }
 
@@ -94,7 +100,10 @@ function generateInterface (prefName:string, variable:CommonObject, indent:strin
   var sub_indent = '\t' + indent;
 
   r += Object.keys(variable).map(function(k){
-    return sub_indent + formatKey(k) + ':' + getVariableType(variable[k], k);
+    if (transType === keyType.toHump) {
+      return sub_indent + toHump(k) + ':' + getVariableType(variable[k], k);
+    }
+    return sub_indent + k + ':' + getVariableType(variable[k], k);
   }).join(';\n') + ';\n';
 
   r += indent + '}\n';

@@ -1,6 +1,6 @@
 node_modules
 out
-.history
+.history/**
 example.*
 **.vsix
 dist
