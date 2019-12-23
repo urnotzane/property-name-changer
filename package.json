@@ -37,15 +37,18 @@
 		"commands": [
       {
 				"command": "propertyNameChanger.toSelector",
-				"title": "selected json → selector function"
+        "title": "selected json → selector function",
+				"category": "propertyNameChanger.toSelector"
 			},
 			{
 				"command": "propertyNameChanger.toHumpType",
-				"title": "selected json → TypeScript Camel Interface"
+        "title": "selected json → TypeScript Camel Interface",
+				"category": "propertyNameChanger.toHumpType"
       },
 			{
 				"command": "propertyNameChanger.toType",
-				"title": "selected json → TypeScript Interface"
+        "title": "selected json → TypeScript Interface",
+				"category": "propertyNameChanger.toType"
       },
 			{
 				"command": "propertyNameChanger.toHump",
