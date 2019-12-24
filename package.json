@@ -25,6 +25,7 @@
 	"activationEvents": [
     "onCommand:propertyNameChanger.toSelector",
     "onCommand:propertyNameChanger.toType",
+    "onCommand:propertyNameChanger.toHumpType",
 		"onCommand:propertyNameChanger.toBottomLine",
 		"onCommand:propertyNameChanger.toHump",
 		"onCommand:propertyNameChanger.jsonToBottomLine",
@@ -36,11 +37,17 @@
 		"commands": [
       {
 				"command": "propertyNameChanger.toSelector",
-				"title": "selected json → selector function"
+        "title": "selected json → selector function",
+				"category": "propertyNameChanger.toSelector"
 			},
 			{
+				"command": "propertyNameChanger.toHumpType",
+        "title": "selected json → TypeScript Camel Interface",
+				"category": "propertyNameChanger.toHumpType"
+      },
+			{
 				"command": "propertyNameChanger.toType",
-				"title": "selected json → TypeScript Interface",
+        "title": "selected json → TypeScript Interface",
 				"category": "propertyNameChanger.toType"
       },
 			{
@@ -78,9 +85,15 @@
 			},
 			{
 				"command": "propertyNameChanger.toType",
-				"key": "ctrl+shift+i",
-				"mac": "ctrl+shift+i",
+				"key": "ctrl+i",
+				"mac": "ctrl+i",
 				"when": "editorTextFocus"
+      },
+      {
+        "command": "propertyNameChanger.toHumpType",
+        "key": "ctrl+shift+i",
+        "mac": "ctrl+shift+i",
+        "when": "editorTextFocus"
       },
 			{
 				"command": "propertyNameChanger.toHump",
@@ -117,6 +130,10 @@
 			"editor/context": [
         {
 					"command": "propertyNameChanger.toType",
+					"group": "5_cutcopypaste@1"
+				},
+        {
+					"command": "propertyNameChanger.toHumpType",
 					"group": "5_cutcopypaste@1"
 				},
 				{
