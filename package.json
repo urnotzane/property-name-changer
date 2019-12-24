@@ -23,8 +23,9 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:propertyNameChanger.toSelector",
-		"onCommand:propertyNameChanger.toType",
+    "onCommand:propertyNameChanger.toSelector",
+    "onCommand:propertyNameChanger.toType",
+    "onCommand:propertyNameChanger.toHumpType",
 		"onCommand:propertyNameChanger.toBottomLine",
 		"onCommand:propertyNameChanger.toHump",
 		"onCommand:propertyNameChanger.jsonToBottomLine",
@@ -36,11 +37,17 @@
 		"commands": [
 			{
 				"command": "propertyNameChanger.toSelector",
-				"title": "selected json → selector function"
+        "title": "JSON生成转义函数",
+				"category": "propertyNameChanger.toSelector"
 			},
 			{
+				"command": "propertyNameChanger.toHumpType",
+        "title": "JSON转驼峰ts",
+				"category": "propertyNameChanger.toHumpType"
+      },
+			{
 				"command": "propertyNameChanger.toType",
-				"title": "selected json → TypeScript Interface",
+        "title": "JSON转ts",
 				"category": "propertyNameChanger.toType"
 			},
 			{
@@ -78,10 +85,16 @@
 			},
 			{
 				"command": "propertyNameChanger.toType",
-				"key": "ctrl+shift+i",
-				"mac": "ctrl+shift+i",
+				"key": "ctrl+i",
+				"mac": "ctrl+i",
 				"when": "editorTextFocus"
-			},
+      },
+      {
+        "command": "propertyNameChanger.toHumpType",
+        "key": "ctrl+shift+i",
+        "mac": "ctrl+shift+i",
+        "when": "editorTextFocus"
+      },
 			{
 				"command": "propertyNameChanger.toHump",
 				"key": "ctrl+shift+1",
@@ -117,6 +130,10 @@
 			"editor/context": [
 				{
 					"command": "propertyNameChanger.toType",
+					"group": "5_cutcopypaste@1"
+				},
+        {
+					"command": "propertyNameChanger.toHumpType",
 					"group": "5_cutcopypaste@1"
 				},
 				{
