@@ -59,18 +59,3 @@ function objectToFormatString(obj:CommonObject) : string {
   });
   return text;
 }
-
-/**
- * 
- * @param value:string 
- * @description 对象转为格式化后的字符串
- */
-export function selectorToFormatString(value:string) : string {
-  const text = prettier.format(value, {
-    parser: "typescript",
-    bracketSpacing: true,
-    trailingComma: "all",
-  });
-  logInfo(deleteQuote(text));
-  return deleteQuote(text);
-}

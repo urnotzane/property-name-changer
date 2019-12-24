@@ -3,11 +3,11 @@ import * as prettier from 'prettier';
 import { CommonObject } from '../type';
 import { message, toHump, logInfo, logError, deleteQuote } from './common';
 
-export function jsonToSelector(str:string) : string {
+export function jsonToSelector(str:string, handler:Function = toHump) : string {
   try {
     const obj = JSON.parse(str);
-    const result = `export function yourSelector(data:any) : any { return ${selectorGenerator(obj)};}`;
-    return selectorToFormatString(result);
+    const resultFunction = `export function yourSelector(data:any) : any { return ${selectorGenerator(obj, handler)};}`;
+    return selectorToFormatString(resultFunction);
   } catch (error) {
     logError(error);
     message.error('JSON解析失败！');
@@ -15,18 +15,18 @@ export function jsonToSelector(str:string) : string {
   }
 }
 
-export function selectorGenerator(data:CommonObject | CommonObject[], itemName = 'data') : string {
+export function selectorGenerator(data:CommonObject | CommonObject[], handler:Function, itemName = 'data') : string {
   let result = '';
   if (_.isArray(data)) {
-    result += `${itemName}.map((item:any) => (${selectorGenerator(data[0], 'item')}))`;
+    result += `${itemName}.map((item:any) => (${selectorGenerator(data[0], handler, 'item')}))`;
   } else {
     result += '{';
     for (let key in data) {
       const value = data[key];
       if (_.isObject(value) || _.isArray(value)) {
-        result += `${toHump(key)}: ${selectorGenerator(value, `${itemName}.${key}`)},`;
+        result += `${handler(key)}: ${selectorGenerator(value, handler, `${itemName}.${key}`)},`;
       } else {
-        result += `${toHump(key)}: ${itemName}.${key},`;
+        result += `${handler(key)}: ${itemName}.${key},`;
       }
     }
     result += '}';

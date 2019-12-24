@@ -4,8 +4,7 @@ import * as vscode from 'vscode';
 import { toHump, logWarn, logInfo, deleteQuote, toBottomLine } from './lib/common';
 import { jsonToBottomLine, jsonToHump } from './lib/prettier';
 import { toInterface } from './lib/transform';
-import { GenPrettierSelector } from './lib/prettier-selector';
-import { jsonToSelector } from './lib/seletor-generator';
+import { jsonToSelector } from './lib/selector-generator';
 import { keyType } from './type';
 
 function replaceFactory(handler:Function, name:string, extra?:any) {
@@ -34,7 +33,8 @@ export function activate(context:vscode.ExtensionContext) {
 	context.subscriptions.push(replaceFactory(jsonToBottomLine, 'jsonToBottomLine'));
 	context.subscriptions.push(replaceFactory(jsonToHump, 'jsonToHump'));
   context.subscriptions.push(replaceFactory(deleteQuote, 'deleteQuote'));
-  context.subscriptions.push(replaceFactory(jsonToSelector, 'toSelector'));
+  context.subscriptions.push(replaceFactory(jsonToSelector, 'toHumpSelector', toHump));
+  context.subscriptions.push(replaceFactory(jsonToSelector, 'toBottomLineSelector', toBottomLine));
   context.subscriptions.push(replaceFactory(toInterface, 'toType'));
   context.subscriptions.push(replaceFactory(toInterface, 'toHumpType', keyType.toHump));
 }
