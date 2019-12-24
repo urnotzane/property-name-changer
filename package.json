@@ -37,17 +37,17 @@
 		"commands": [
       {
 				"command": "propertyNameChanger.toSelector",
-        "title": "selected json → selector function",
+        "title": "JSON生成转义函数",
 				"category": "propertyNameChanger.toSelector"
 			},
 			{
 				"command": "propertyNameChanger.toHumpType",
-        "title": "selected json → TypeScript Camel Interface",
+        "title": "JSON转驼峰ts",
 				"category": "propertyNameChanger.toHumpType"
       },
 			{
 				"command": "propertyNameChanger.toType",
-        "title": "selected json → TypeScript Interface",
+        "title": "JSON转ts",
 				"category": "propertyNameChanger.toType"
       },
 			{
