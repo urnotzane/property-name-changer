@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import * as prettier from 'prettier';
-import { toHump, logError, message, toBottomLine, fieldReplacer, deleteEscapeSymbol, isJson, logInfo } from './common';
+import { toHump, logError, message, toBottomLine, fieldReplacer, deleteEscapeSymbol, isJson, logInfo, deleteQuote } from './common';
 import { CommonObject } from '../type';
 /**
  * 
@@ -67,9 +67,10 @@ function objectToFormatString(obj:CommonObject) : string {
  */
 export function selectorToFormatString(value:string) : string {
   const text = prettier.format(value, {
-    // parser: "json5",
+    parser: "typescript",
     bracketSpacing: true,
     trailingComma: "all",
   });
-  return text.replace(/\"/g,'');
+  logInfo(deleteQuote(text));
+  return deleteQuote(text);
 }

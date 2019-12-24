@@ -4,7 +4,17 @@
   "voice_urls": [
     {
       "voice_url": "https://static-k12edu-camprecord.codemao.cn/oEMA252Dxr8bkVc37H6i630lgui8200b3_145_1571716672000.mp4",
-      "voice_time": 66
+      "voice_time": 66,
+      "new": [
+        {
+          "voice_url": "https://static-k12edu-camprecord.codemao.cn/oEMA252Dxr8bkVc37H6i630lgui8200b3_145_1571716672000.mp4",
+          "voice_time": 66
+        },
+        {
+          "voice_url": "https://static-k12edu-camprecord.codemao.cn/oEMA252Dxr8bkVc37H6i630lgui8200b3_145_1571716672000.mp4",
+          "voice_time": 66
+        }
+      ]
     },
     {
       "voice_url": "https://static-k12edu-camprecord.codemao.cn/oEMA252Dxr8bkVc37H6i630lgui8200b3_145_1571716672000.mp4",

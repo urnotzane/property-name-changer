@@ -1,7 +1,7 @@
 import * as prettier from 'prettier';
 import * as _ from 'lodash';
 import * as vscode from 'vscode';
-import { toHump } from './common';
+import { toHump, logInfo } from './common';
 import { selectorToFormatString } from './prettier';
 import { CommonObject } from '../type';
 var extra_interface = '';
@@ -14,6 +14,7 @@ export function GenPrettierSelector (data:string) {
     return (result + '\n/* 自动生成的 Selector Function */\n' + extra_interface).trim();
   } catch (error) {
     vscode.window.showErrorMessage('json 解析错误！');
+    logInfo(error);
   }
 }
 
@@ -40,19 +41,21 @@ export function yourSelector(data:Object):Object {
 };
 `;
 function generateSelector(data:(any[] | {[key:string]:any})):string {
-  const tpl:any = generateRecursiveSelector(data);
-  let funString = `\nexport function yourSelector (data:Object):Object {\n\treturn `;
+  let funString = `\nexport function yourSelector (data:Object):Object { return `;
+  logInfo(data);
   // todo how to generator from array data
-  // if (_.isArray(data)) {
-  //   data.forEach(item => {
-  //     funString += 'data.forEach(item => (' + generateRecursiveSelector(item) + '))';
-  //     console.log(generateRecursiveSelector(item));
-  //   });
-  // } else {
-  //   funString += JSON.stringify(tpl);
-  // }
-  funString += JSON.stringify(tpl);
-  funString += `\t};`;
+  if (_.isArray(data)) {
+    funString += 'data.map(item => (';
+    data.forEach(item => {
+      funString += generateRecursiveSelector(item) + ';';
+      console.log(generateRecursiveSelector(item));
+    });
+    funString += "));";
+  } else {
+    funString += generateRecursiveSelector(data);
+  }
+  // funString += JSON.stringify(tpl);
+  funString += `};`;
   return selectorToFormatString(funString);
 }
 
