@@ -1,8 +1,7 @@
 
-import * as vscode from 'vscode';
 import * as _ from 'lodash';
 import { CommonObject, keyType } from '../type';
-import { toHump } from './common';
+import { toHump, message } from './common';
 
 let interfaceNames = ['YourInterfaceName'];
 let extraInterface = '';
@@ -22,7 +21,7 @@ export function toInterface (variable:string, type:keyType = keyType.toLine) {
     extraInterface = '';
     return res;
   } catch (error) {
-    vscode.window.showErrorMessage('json 解析错误！');
+    message.error('json 解析错误！');
   }
 }
 
