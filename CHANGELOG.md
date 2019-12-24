@@ -11,6 +11,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - `Removed` for now removed features.
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities.
+
+## [1.1.0] - 2019-12-24
+### Added
+- 新增根据JSON生成typescript的interface。
+### Changed
+- 现在JSON转驼峰或底杠后还是JSON，不会删除它的双引号了。
+
 ## [1.0.0] - 2019-12-16
 ### Added
 - 添加JSON转义。

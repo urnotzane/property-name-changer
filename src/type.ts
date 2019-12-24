@@ -7,4 +7,4 @@ export type CommonObject = {
 export enum keyType {
   toHump = 'toHump',
   toLine =  'toLine',
-};
+}

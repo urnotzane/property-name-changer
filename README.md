@@ -12,8 +12,7 @@ Function | Example | Command | Keybindings
 JSON底杠转驼峰 | { "property_name": "value" } => { "propertyName": "value" } | varname.toHump | `ctrl+shift+3`
 JSON驼峰转底杠 | { "propertyName": "value" } => { "property_name": "value" } | varname.toBottomLine | `ctrl+shift+4`
 删除引号 | 'propertyName' => propertyName | varname.deleteQuote | `ctrl+shift+'`
-json转TypeScript Interface | `{"title": "test my jsontotype"}` => `interface YourNameInterface { title:string }` | propertyNameChanger.toType | `ctrl+i`
-json转TypeScript Interface(驼峰) | `{"user_id": "test my jsontoselector"}` => `interface YourNameInterface { userId:string }` | propertyNameChanger.toHumpType | `ctrl+shift+i`
+json生成interface | `{"title": "test my interface"}` => `interface YourNameInterface { title:string }` | propertyNameChanger.toType | `ctrl+i`
 
 ## Schedule:pencil:
 - 根据逗号和分号确定对象字段名，并且仅更改等号或冒号前的字符串，如果没有可区分的符号，则给出提示。
