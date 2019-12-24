@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import * as prettier from 'prettier';
-import { toHump, logError, message, toBottomLine, fieldReplacer, deleteEscapeSymbol, isJson, logInfo } from './common';
+import { toHump, logError, message, toBottomLine, fieldReplacer, deleteEscapeSymbol, isJson, logInfo, deleteQuote } from './common';
 import { CommonObject } from '../type';
 /**
  * 

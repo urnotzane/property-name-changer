@@ -23,6 +23,8 @@
 		"Other"
 	],
 	"activationEvents": [
+    "onCommand:propertyNameChanger.toHumpSelector",
+    "onCommand:propertyNameChanger.toBottomLineSelector",
     "onCommand:propertyNameChanger.toType",
 		"onCommand:propertyNameChanger.toBottomLine",
 		"onCommand:propertyNameChanger.toHump",
@@ -34,10 +36,20 @@
 	"contributes": {
 		"commands": [
 			{
+				"command": "propertyNameChanger.toHumpSelector",
+        "title": "底杠→驼峰转义函数",
+				"category": "propertyNameChanger.toHumpSelector"
+			},
+			{
+				"command": "propertyNameChanger.toBottomLineSelector",
+        "title": "驼峰→底杠转义函数",
+				"category": "propertyNameChanger.toBottomLineSelector"
+			},
+			{
 				"command": "propertyNameChanger.toType",
         "title": "JSON生成interface",
 				"category": "propertyNameChanger.toType"
-      },
+			},
 			{
 				"command": "propertyNameChanger.toHump",
 				"title": "底杠转驼峰",
@@ -65,6 +77,18 @@
 			}
 		],
 		"keybindings": [
+			{
+				"command": "propertyNameChanger.toHumpSelector",
+				"key": "ctrl+shift+h",
+				"mac": "ctrl+shift+h",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "propertyNameChanger.toBottomLineSelector",
+				"key": "ctrl+shift+b",
+				"mac": "ctrl+shift+b",
+				"when": "editorTextFocus"
+			},
 			{
 				"command": "propertyNameChanger.toType",
 				"key": "ctrl+i",
@@ -104,8 +128,16 @@
 		],
 		"menus": {
 			"editor/context": [
-        {
+				{
 					"command": "propertyNameChanger.toType",
+					"group": "5_cutcopypaste@1"
+				},
+				{
+					"command": "propertyNameChanger.toHumpSelector",
+					"group": "5_cutcopypaste@1"
+				},
+				{
+					"command": "propertyNameChanger.toBottomLineSelector",
 					"group": "5_cutcopypaste@1"
 				},
 				{
