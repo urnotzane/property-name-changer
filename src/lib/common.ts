@@ -74,7 +74,7 @@ export function fieldReplacer(data:CommonObject|CommonObject[], handler:Function
   }
   const result:CommonObject = {};
   for(let key in data) {
-    const newKey = handler(key);
+    const newKey = handler(`${key}`);
     const value = data[key];
     if (_.isArray(value) || _.isObject(value)) {
       result[newKey] = fieldReplacer(value, handler);
@@ -93,7 +93,7 @@ export function deleteEscapeSymbol(obj:CommonObject) {
   return JSON.stringify(obj)
     .replace(/\\f|\\n|\\r|\\t|\\v|\\/g, '')
     .replace(/\"{/g, '{')
-    .replace(/\}\"/g, '}');
+    .replace(/}\"/g, '}');
 }
 /**
  *

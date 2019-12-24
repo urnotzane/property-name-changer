@@ -13,7 +13,7 @@ export function jsonToHump(text:string) : string {
       return '';
     }
     if (!isJson(text)) {
-      message.error('非JSON格式的内容转化可能有误！');
+      message.error('JSON解析失败！');
       return text;
     }
     const obj = fieldReplacer(JSON.parse(text), toHump);
@@ -35,7 +35,7 @@ export function jsonToBottomLine(text:string) : string {
       return '';
     }
     if (!isJson(text)) {
-      message.error('非JSON格式的内容转化可能有误！');
+      message.error('JSON解析失败！');
       return text;
     }
     const obj = fieldReplacer(JSON.parse(text), toBottomLine);
@@ -53,23 +53,10 @@ export function jsonToBottomLine(text:string) : string {
  */
 function objectToFormatString(obj:CommonObject) : string {
   const text = prettier.format(deleteEscapeSymbol(obj), {
-    parser: "json5",
+    parser: "json",
     bracketSpacing: true,
     trailingComma: "all",
+    semi: true,
   });
   return text;
-}
-
-/**
- * 
- * @param value:string 
- * @description 对象转为格式化后的字符串
- */
-export function selectorToFormatString(value:string) : string {
-  const text = prettier.format(value, {
-    // parser: "json5",
-    bracketSpacing: true,
-    trailingComma: "all",
-  });
-  return text.replace(/\"/g,'');
 }
