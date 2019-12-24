@@ -74,7 +74,7 @@ export function fieldReplacer(data:CommonObject|CommonObject[], handler:Function
   }
   const result:CommonObject = {};
   for(let key in data) {
-    const newKey = handler(key);
+    const newKey = handler(`${key}`);
     const value = data[key];
     if (_.isArray(value) || _.isObject(value)) {
       result[newKey] = fieldReplacer(value, handler);
@@ -82,7 +82,7 @@ export function fieldReplacer(data:CommonObject|CommonObject[], handler:Function
       result[newKey] = value;
     }
   }
-  return result
+  return result;
 }
 /**
  * 
@@ -93,7 +93,7 @@ export function deleteEscapeSymbol(obj:CommonObject) {
   return JSON.stringify(obj)
     .replace(/\\f|\\n|\\r|\\t|\\v|\\/g, '')
     .replace(/\"{/g, '{')
-    .replace(/\}\"/g, '}');
+    .replace(/}\"/g, '}');
 }
 /**
  *
@@ -107,7 +107,7 @@ export function isJson(str:string) : boolean {
       if (typeof obj === 'object') {
         return true;
       }
-      return false
+      return false;
     } catch (error) {
       logError(error);
       return false;
@@ -115,3 +115,4 @@ export function isJson(str:string) : boolean {
   }
   return false;
 }
+

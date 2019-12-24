@@ -23,6 +23,7 @@
 		"Other"
 	],
 	"activationEvents": [
+    "onCommand:propertyNameChanger.toType",
 		"onCommand:propertyNameChanger.toBottomLine",
 		"onCommand:propertyNameChanger.toHump",
 		"onCommand:propertyNameChanger.jsonToBottomLine",
@@ -32,6 +33,11 @@
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
+			{
+				"command": "propertyNameChanger.toType",
+        "title": "JSON生成interface",
+				"category": "propertyNameChanger.toType"
+      },
 			{
 				"command": "propertyNameChanger.toHump",
 				"title": "底杠转驼峰",
@@ -59,6 +65,12 @@
 			}
 		],
 		"keybindings": [
+			{
+				"command": "propertyNameChanger.toType",
+				"key": "ctrl+i",
+				"mac": "ctrl+i",
+				"when": "editorTextFocus"
+      },
 			{
 				"command": "propertyNameChanger.toHump",
 				"key": "ctrl+shift+1",
@@ -92,6 +104,10 @@
 		],
 		"menus": {
 			"editor/context": [
+        {
+					"command": "propertyNameChanger.toType",
+					"group": "5_cutcopypaste@1"
+				},
 				{
 					"command": "propertyNameChanger.toHump",
 					"group": "5_cutcopypaste@1"
