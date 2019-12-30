@@ -7,11 +7,11 @@ Change your property name easily!
 
 Function | Example | Command | Keybindings
 -|-|-|-
-底杠转驼峰 | property_name => propertyName | varname.toHump | `ctrl+shift+1`
-驼峰转底杠 | propertyName => property_name | varname.toBottomLine | `ctrl+shift+2`
-JSON底杠转驼峰 | { "property_name": "value" } => { "propertyName": "value" } | varname.toHump | `ctrl+shift+3`
-JSON驼峰转底杠 | { "propertyName": "value" } => { "property_name": "value" } | varname.toBottomLine | `ctrl+shift+4`
-删除引号 | 'propertyName' => propertyName | varname.deleteQuote | `ctrl+shift+'`
+底杠转驼峰 | `property_name` => `propertyName` | varname.toHump | `ctrl+shift+1`
+驼峰转底杠 | `propertyName` => `property_name` | varname.toBottomLine | `ctrl+shift+2`
+JSON底杠转驼峰 | `{ "property_name": "value" }` => `{ "propertyName": "value" }` | varname.toHump | `ctrl+shift+3`
+JSON驼峰转底杠 | `{ "propertyName": "value" }` => `{ "property_name": "value" }` | varname.toBottomLine | `ctrl+shift+4`
+删除引号 | `'propertyName'` => `propertyName` | varname.deleteQuote | `ctrl+shift+'`
 json生成interface | `{"title": "test my interface"}` => `interface YourNameInterface { title:string }` | propertyNameChanger.toType | `ctrl+i`
 
 ## Schedule:pencil:
