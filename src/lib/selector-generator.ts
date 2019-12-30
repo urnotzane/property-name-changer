@@ -18,7 +18,9 @@ export function jsonToSelector(str:string, handler:Function = toHump) : string {
 export function selectorGenerator(data:CommonObject | CommonObject[], handler:Function, itemName = 'data') : string {
   let result = '';
   if (_.isArray(data)) {
-    result += `${itemName}.map((item:any) => (${selectorGenerator(data[0], handler, 'item')}))`;
+    const itemKeys = itemName.split('.');
+    const itemKey = itemKeys[itemKeys.length - 1] + 'Item';
+    result += `${itemName}.map((${itemKey}:any) => (${selectorGenerator(data[0], handler, itemKey)}))`;
   } else {
     result += '{';
     for (let key in data) {
