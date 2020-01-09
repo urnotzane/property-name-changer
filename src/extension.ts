@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import { toHump, logWarn, logInfo, deleteQuote, toBottomLine } from './lib/common';
-import { jsonToBottomLine, jsonToHump } from './lib/prettier';
+import { jsonToBottomLine, jsonToHump } from './lib/name-changer';
 import { toInterface } from './lib/transform';
 
 function replaceFactory(handler:Function, name:string, extra?:any) {

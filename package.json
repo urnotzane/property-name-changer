@@ -2,7 +2,7 @@
 	"name": "property-name-changer",
 	"displayName": "PropertyNameChanger",
 	"description": "Change your property name easily!",
-	"version": "1.1.2",
+	"version": "1.1.6",
 	"publisher": "urnotzane",
 	"icon": "images/icon.png",
 	"license": "MIT",
