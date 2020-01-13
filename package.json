@@ -2,7 +2,7 @@
 	"name": "property-name-changer",
 	"displayName": "PropertyNameChanger",
 	"description": "Change your property name easily!",
-	"version": "1.1.1",
+	"version": "1.1.11",
 	"publisher": "urnotzane",
 	"icon": "images/icon.png",
 	"license": "MIT",
@@ -29,8 +29,7 @@
 		"onCommand:propertyNameChanger.toBottomLine",
 		"onCommand:propertyNameChanger.toHump",
 		"onCommand:propertyNameChanger.jsonToBottomLine",
-		"onCommand:propertyNameChanger.jsonToHump",
-		"onCommand:propertyNameChanger.deleteQuote"
+		"onCommand:propertyNameChanger.jsonToHump"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -69,11 +68,6 @@
 				"command": "propertyNameChanger.jsonToBottomLine",
 				"title": "JSON驼峰转底杠",
 				"category": "propertyNameChanger.jsonToBottomLine"
-			},
-			{
-				"command": "propertyNameChanger.deleteQuote",
-				"title": "删除引号",
-				"category": "propertyNameChanger.deleteQuote"
 			}
 		],
 		"keybindings": [
@@ -118,12 +112,6 @@
 				"key": "ctrl+shift+4",
 				"mac": "ctrl+shift+4",
 				"when": "editorTextFocus"
-			},
-			{
-				"command": "propertyNameChanger.deleteQuote",
-				"key": "ctrl+shift+'",
-				"mac": "ctrl+shift+'",
-				"when": "editorTextFocus"
 			}
 		],
 		"menus": {
@@ -155,10 +143,6 @@
 				{
 					"command": "propertyNameChanger.jsonToBottomLine",
 					"group": "5_cutcopypaste@1"
-				},
-				{
-					"command": "propertyNameChanger.deleteQuote",
-					"group": "5_cutcopypaste@2"
 				}
 			]
 		}

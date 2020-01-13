@@ -1,8 +1,6 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import { toHump, logWarn, logInfo, deleteQuote, toBottomLine } from './lib/common';
-import { jsonToBottomLine, jsonToHump } from './lib/prettier';
+import { jsonToBottomLine, jsonToHump } from './lib/name-changer';
 import { toInterface } from './lib/transform';
 import { jsonToSelector } from './lib/selector-generator';
 
@@ -12,7 +10,7 @@ function replaceFactory(handler:Function, name:string, extra?:any) {
 		const getText = textEditor.document.getText;
 		// 选中的内容Range数组
 		const selectRange = textEditor.selections;
-		selectRange.forEach((range) => {
+		selectRange.forEach((range:any) => {
 			const { start, end } = range;
 			const text = getText(range);
 			if (text) {
@@ -31,7 +29,6 @@ export function activate(context:vscode.ExtensionContext) {
 	context.subscriptions.push(replaceFactory(toHump, 'toHump'));
 	context.subscriptions.push(replaceFactory(jsonToBottomLine, 'jsonToBottomLine'));
 	context.subscriptions.push(replaceFactory(jsonToHump, 'jsonToHump'));
-  context.subscriptions.push(replaceFactory(deleteQuote, 'deleteQuote'));
   context.subscriptions.push(replaceFactory(jsonToSelector, 'toHumpSelector', toHump));
   context.subscriptions.push(replaceFactory(jsonToSelector, 'toBottomLineSelector', toBottomLine));
   context.subscriptions.push(replaceFactory(toInterface, 'toType'));

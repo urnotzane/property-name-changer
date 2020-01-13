@@ -12,7 +12,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities.
 
-## [1.1.0] - 2019-12-24
+## [1.1.3] - 2020-01-09
+### Fixed
+- 修复Command Not Found。
+
+## [1.1.0] - 2019-12-29
 ### Added
 - 新增根据JSON生成typescript的interface。
 ### Changed

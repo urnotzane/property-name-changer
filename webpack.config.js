@@ -23,6 +23,7 @@ const config = {
       amd: 'lodash',
       root: '_'
     },
+    prettier: 'commonjs prettier',
   },
   resolve: {
     extensions: ['.ts', '.js']
