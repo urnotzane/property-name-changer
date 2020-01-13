@@ -1,5 +1,3 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import { toHump, logWarn, logInfo, deleteQuote, toBottomLine } from './lib/common';
 import { jsonToBottomLine, jsonToHump } from './lib/name-changer';
@@ -11,7 +9,7 @@ function replaceFactory(handler:Function, name:string, extra?:any) {
 		const getText = textEditor.document.getText;
 		// 选中的内容Range数组
 		const selectRange = textEditor.selections;
-		selectRange.forEach((range) => {
+		selectRange.forEach((range:any) => {
 			const { start, end } = range;
 			const text = getText(range);
 			if (text) {

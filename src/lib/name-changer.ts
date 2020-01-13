@@ -1,7 +1,6 @@
-import * as _ from 'lodash';
 import * as prettier from 'prettier';
 import { toHump, logError, message, toBottomLine, fieldReplacer, deleteEscapeSymbol, isJson, logInfo } from './common';
-import { CommonObject } from '../type';
+
 /**
  * 
  * @param text 
@@ -51,7 +50,7 @@ export function jsonToBottomLine(text:string) : string {
  * @param obj 
  * @description 对象转为格式化后的字符串
  */
-function objectToFormatString(obj:CommonObject) : string {
+function objectToFormatString(obj:any) : string {
   const text = prettier.format(deleteEscapeSymbol(obj), {
     parser: "json",
     bracketSpacing: true,
