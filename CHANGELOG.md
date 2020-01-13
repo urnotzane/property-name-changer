@@ -12,7 +12,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities.
 
-## [1.1.3] - 2020-01-09
+## [1.2.0] - 2020-01-13
+### Added
+- 通过JSON生成转义函数。
+
+## [1.1.11] - 2020-01-09
 ### Fixed
 - 修复Command Not Found。
 
