@@ -2,7 +2,7 @@
 	"name": "property-name-changer",
 	"displayName": "PropertyNameChanger",
 	"description": "Change your property name easily!",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"publisher": "urnotzane",
 	"icon": "images/icon.png",
 	"license": "MIT",
@@ -23,9 +23,9 @@
 		"Other"
 	],
 	"activationEvents": [
-    "onCommand:propertyNameChanger.toHumpSelector",
-    "onCommand:propertyNameChanger.toBottomLineSelector",
-    "onCommand:propertyNameChanger.toType",
+		"onCommand:propertyNameChanger.toHumpSelector",
+		"onCommand:propertyNameChanger.toBottomLineSelector",
+		"onCommand:propertyNameChanger.toType",
 		"onCommand:propertyNameChanger.toBottomLine",
 		"onCommand:propertyNameChanger.toHump",
 		"onCommand:propertyNameChanger.jsonToBottomLine",
@@ -36,17 +36,17 @@
 		"commands": [
 			{
 				"command": "propertyNameChanger.toHumpSelector",
-        "title": "底杠→驼峰转义函数",
+				"title": "底杠→驼峰转义函数",
 				"category": "propertyNameChanger.toHumpSelector"
 			},
 			{
 				"command": "propertyNameChanger.toBottomLineSelector",
-        "title": "驼峰→底杠转义函数",
+				"title": "驼峰→底杠转义函数",
 				"category": "propertyNameChanger.toBottomLineSelector"
 			},
 			{
 				"command": "propertyNameChanger.toType",
-        "title": "JSON生成interface",
+				"title": "JSON生成interface",
 				"category": "propertyNameChanger.toType"
 			},
 			{
@@ -88,7 +88,7 @@
 				"key": "ctrl+i",
 				"mac": "ctrl+i",
 				"when": "editorTextFocus"
-      },
+			},
 			{
 				"command": "propertyNameChanger.toHump",
 				"key": "ctrl+shift+1",
@@ -164,7 +164,7 @@
 		"mocha": "^6.2.2",
 		"module": "^1.2.5",
 		"ts-loader": "^6.2.1",
-		"tslint": "^5.20.0",
+		"tslint": "^5.20.1",
 		"typescript": "^3.6.4",
 		"uglifyjs-webpack-plugin": "^2.2.0",
 		"vsce": "^1.71.0",

@@ -1,4 +1,3 @@
-
 import * as _ from 'lodash';
 import { CommonObject, keyType } from '../type';
 import { toHump, message } from './common';
@@ -16,20 +15,13 @@ export function toInterface (variable:string, type:keyType = keyType.toLine) {
     } else {
       result = generateInterface('YourInterfaceName', data, '');
     }
-    const res = (result + '\n/* 自动生成的 Interface */\n' + extraInterface).trim();
+    const res = (result + extraInterface).trim();
     interfaceNames = ['YourInterfaceName'];
     extraInterface = '';
     return res;
   } catch (error) {
     message.error('json 解析错误！');
   }
-}
-
-function formatKey (key:string) {
-  // if (!/^[a-z][a-z\d]*$/i.test(key))
-  //   return JSON.stringify(key);
-
-  return key;
 }
 
 function getVariableType (variable:{[props:string]:any}, name:string):string {
@@ -39,15 +31,6 @@ function getVariableType (variable:{[props:string]:any}, name:string):string {
   
   const type = typeof variable;
   if (variable.constructor.name === 'Array') {
-    // const tpl = [];
-    // variable.map((item, index) => {
-    //   const arrType = getVariableType(item, name);
-    //   tpl.push(arrType);
-    // })
-    // const isNotSame = tpl.find(item => item !== tpl[0]);
-    // if (isNotSame) {
-    //   return tpl;
-    // }
     return getVariableType(variable[0], name) + '[]';
   }
   if (type === 'object') {
@@ -85,17 +68,8 @@ function getVariableType (variable:{[props:string]:any}, name:string):string {
   return type;
 }
 
-
-const template = `
-export function yourSelector(obj:Object):Object {
-  return {
-    name: obj.name,
-    nRate: obj.n_rate,
-  };
-};
-`;
 function generateInterface (prefName:string, variable:CommonObject, indent:string) {
-  var r = '\n' + indent + 'interface ' + prefName + ' {\n';
+  var r = '\n' + indent + 'export interface ' + prefName + ' {\n';
   var sub_indent = '\t' + indent;
 
   r += Object.keys(variable).map(function(k){

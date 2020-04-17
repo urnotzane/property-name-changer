@@ -12,6 +12,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities.
 
+## [1.2.2] - 2020-01-13
+### Changed
+- 删除注释。
+- 添加`export`。
+
 ## [1.2.0] - 2020-01-13
 ### Added
 - 通过JSON生成转义函数。
