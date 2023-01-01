@@ -163,14 +163,14 @@
 		"glob": "^7.1.5",
 		"mocha": "^6.2.2",
 		"module": "^1.2.5",
-		"ts-loader": "^6.2.1",
+		"ts-loader": "^9.4.2",
 		"tslint": "^5.20.1",
 		"typescript": "^3.6.4",
 		"uglifyjs-webpack-plugin": "^2.2.0",
 		"vsce": "^1.71.0",
 		"vscode-test": "^1.2.2",
-		"webpack": "^4.41.2",
-		"webpack-cli": "^3.3.10",
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.1",
 		"yo": "^3.1.1"
 	},
 	"bugs": {
